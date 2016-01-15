@@ -38,7 +38,7 @@
 #define USART3_IT_RX_ON 1
 
 #define UART4_ON 1
-#define UART4_IT_RX_ON 1
+#define UART4_IT_RX_ON 0
 
 #define UART5_ON 0
 #define UART5_IT_RX_ON 0
@@ -53,8 +53,8 @@
 #define BAUDRATE_USART1		9600
 #define BAUDRATE_USART3		9600
 
-#define BAUDRATE_UART4		9600
-#define BAUDRARE_UART5		115200
+#define BAUDRATE_UART4		115200
+#define BAUDRARE_UART5		9600
 
 
 

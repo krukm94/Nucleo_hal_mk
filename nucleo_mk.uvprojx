@@ -447,6 +447,11 @@
               <FileType>1</FileType>
               <FilePath>.\source\mk_term.c</FilePath>
             </File>
+            <File>
+              <FileName>mpu-6050.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\source\mpu-6050.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

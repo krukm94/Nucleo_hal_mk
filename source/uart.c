@@ -95,7 +95,8 @@ uint8_t usart1_init(void)
 		HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 		//Priorytet przerwania
 		
-		NVIC_SetPriority(USART1_IRQn, 1);
+		NVIC_SetPriority(USART1_IRQn, 2);
+
 		NVIC_EnableIRQ(USART1_IRQn);
 
 //Handle
@@ -538,7 +539,7 @@ void usart3_odczyt(uint8_t rx){
 					cnt_usart3 = -1;
 					last_line_usart3 = 0;
 	
-					//usart2_WriteS(buf_usart3);
+				//	usart2_WriteS(buf_usart3);
 					// niezbedne wyczyszczenie smieci z buforu
 						for(i=0;i<1000;i++){
 							buf_usart3[i] = 0;
@@ -593,7 +594,7 @@ uint8_t uart4_init(void)
 /* Configure USART Tx as alternate function */
 GPIO_InitStruct.Pin = GPIO_PIN_0;
 GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-GPIO_InitStruct.Pull = GPIO_PULLUP;
+GPIO_InitStruct.Pull = GPIO_NOPULL;
 GPIO_InitStruct.Speed = GPIO_SPEED_FAST;
 GPIO_InitStruct.Alternate = GPIO_AF8_UART4;
 HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
@@ -611,9 +612,9 @@ NVIC_EnableIRQ(UART4_IRQn);
 
 //Handle
 		UART4_HandleStruct.Instance = UART4;
-		UART4_HandleStruct.Init.BaudRate = BAUDRATE_UART4;
+		UART4_HandleStruct.Init.BaudRate = 115200;
 		UART4_HandleStruct.Init.StopBits = UART_STOPBITS_1;
-		
+		UART4_HandleStruct.Init.WordLength = UART_WORDLENGTH_8B;
 		UART4_HandleStruct.Init.Parity = UART_PARITY_NONE;
 		UART4_HandleStruct.Init.Mode = UART_MODE_TX_RX;
 
@@ -731,8 +732,8 @@ HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 NVIC_SetPriority(UART5_IRQn, 1);
 NVIC_EnableIRQ(UART5_IRQn);
 
-		UART5_HandleStruct.Instance = USART3;
-		UART5_HandleStruct.Init.BaudRate = BAUDRATE_USART3;
+		UART5_HandleStruct.Instance = UART5;
+		UART5_HandleStruct.Init.BaudRate = BAUDRARE_UART5;
 		UART5_HandleStruct.Init.StopBits = USART_STOPBITS_1;
 		UART5_HandleStruct.Init.Parity = USART_PARITY_NONE;
 		UART5_HandleStruct.Init.Mode = USART_MODE_TX_RX;

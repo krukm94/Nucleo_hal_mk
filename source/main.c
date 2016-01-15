@@ -20,37 +20,38 @@
 /* ------------------------> global variables */
 volatile uint8_t i2c1_init_stat;
 volatile uint8_t device_ready;
+volatile  uint8_t *buf;
 
 int main(void){
 
-//  uint8_t buf;
-//	char AX[16];
-//	char init_stat_buf[16];
-//	char device_ready_buf[16];
+ 
+	char AX[16];
+	char init_stat_buf[16];
+	char device_ready_buf[16];
 	
 	/*wywolanie hala stm */
 	HAL_Init();
 	/*wywolanie inicjalizacji hala */
 	HAL ->Init();
 
-//		i2c1_init_stat = i2c1_init();
-//		
-//		device_ready = i2c1_test();
-//	
-//		
-//		itoa(i2c1_init_stat,init_stat_buf,10);
-//		itoa(device_ready,device_ready_buf,10);
-//	
-//		HAL -> usart2_WriteS("\n\r Init: ");
-//		HAL -> usart2_WriteS(init_stat_buf);
-//		HAL -> usart2_WriteS("\n\r Test: ");
-//		HAL -> usart2_WriteS(device_ready_buf);
+		i2c1_init_stat = i2c1_init();
+		
+		device_ready = i2c1_test();
 	
-
+		
+		itoa(i2c1_init_stat,init_stat_buf,10);
+		itoa(device_ready,device_ready_buf,10);
+	
+		HAL -> usart2_WriteS("\n\r Init: ");
+		HAL -> usart2_WriteS(init_stat_buf);
+		HAL -> usart2_WriteS("\n\r Test: ");
+		HAL -> usart2_WriteS(device_ready_buf);
+	
 
 			/* -------------------------------------> main loop */
 			while(1){
-
+				*buf = mpu_6050_read_AX();
+					HAL -> usart2_WriteS(buf);
 
 			}
 }

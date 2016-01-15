@@ -77,8 +77,7 @@ void TIM2_IRQHandler(void)
 			if(diode_cnt == 2000){
 				ledToggle();
 				diode_cnt = 0;
-				uart4_cr1 = UART4 -> CR1;
-					uart4_Write(69);
+
 			}
 					if(gps_disp_cnt == 2000){
 

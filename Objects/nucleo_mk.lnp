@@ -6,6 +6,7 @@
 ".\objects\itoa.o"
 ".\objects\timer.o"
 ".\objects\mk_term.o"
+".\objects\mpu-6050.o"
 ".\objects\system_stm32l4xx.o"
 ".\objects\startup_stm32l476xx.o"
 ".\objects\stm32l4xx_hal.o"
