@@ -56,29 +56,26 @@ uint8_t i2c1_init(void){
 		//I2C Configuration
 				
 				I2C1_HandleStruct.Instance 		= I2C1;
-				// Ten timing to usatwienie rejestru, wartosc biore z Cuba, zalezy ona od predkosci I2C oraz czasów rise i fall na liniach SDA I SCL
-				I2C1_HandleStruct.Init.Timing =	0x20A60D20;
+				I2C1_HandleStruct.Init.Timing =	0x00000000;
 				I2C1_HandleStruct.Init.OwnAddress1 = 0;
 				I2C1_HandleStruct.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
 				I2C1_HandleStruct.Init.DualAddressMode = I2C_DUALADDRESS_DISABLED;
 				I2C1_HandleStruct.Init.OwnAddress2 = 0;
 				I2C1_HandleStruct.Init.OwnAddress2Masks = I2C_OA2_NOMASK;
 				I2C1_HandleStruct.Init.GeneralCallMode = I2C_GENERALCALL_DISABLED;
-				I2C1_HandleStruct.Init.NoStretchMode = I2C_NOSTRETCH_DISABLED;
+				
 				i2c_status = HAL_I2C_Init(&I2C1_HandleStruct);
 				
 				//Configure Analogue filter
 				HAL_I2CEx_AnalogFilter_Config(&I2C1_HandleStruct, I2C_ANALOGFILTER_ENABLED);
 				
-				__HAL_I2C_ENABLE(&I2C1_HandleStruct);
-				//I2C1 -> CR1 |= I2C_CR1_PE;
 				return i2c_status;
 }
 
 
 uint8_t i2c1_test(void){
 	uint8_t i2c1_device;
-	i2c1_device = HAL_I2C_IsDeviceReady(&I2C1_HandleStruct, 0x69 , 10000,10000);
+	i2c1_device = HAL_I2C_IsDeviceReady(&I2C1_HandleStruct, 0x69 , 10,0);
 	
 	return i2c1_device;
 	
@@ -92,4 +89,3 @@ uint8_t mpu_6050_read_AX(void){
 			
 			return *buf;
 }
-
