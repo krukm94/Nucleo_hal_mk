@@ -448,9 +448,14 @@
               <FilePath>.\source\mk_term.c</FilePath>
             </File>
             <File>
-              <FileName>mpu-6050.c</FileName>
+              <FileName>i2c.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\source\mpu-6050.c</FilePath>
+              <FilePath>.\source\i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>kompas.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\source\kompas.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -483,14 +488,14 @@
               <FilePath>.\lib\STM32HALL4\Src\stm32l4xx_hal_rcc.c</FilePath>
             </File>
             <File>
-              <FileName>stm32l4xx_hal_rcc_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\lib\STM32HALL4\Src\stm32l4xx_hal_rcc_ex.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32l4xx_hal_cortex.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\lib\STM32HALL4\Src\stm32l4xx_hal_cortex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_hal_rcc_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lib\STM32HALL4\Src\stm32l4xx_hal_rcc_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_pwr.c</FileName>

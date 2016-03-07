@@ -83,3 +83,5 @@
 .\objects\timer.o: source\uart.h
 .\objects\timer.o: source\timer.h
 .\objects\timer.o: source\hal.h
+.\objects\timer.o: source\i2c.h
+.\objects\timer.o: source\mk_term.h

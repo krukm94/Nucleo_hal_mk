@@ -13,6 +13,7 @@
 // global variables
 volatile uint8_t usart_stat;
 volatile uint8_t tim2_stat;
+extern volatile uint32_t procent;
 
 //===================================================================================================================================================
 void halLib_Init(void){
@@ -26,23 +27,26 @@ void halLib_Init(void){
 	/* Inicjalizacja uartu2 */
 		usart2_init();
 	
+	usart2_WriteS("-->> NUCLEO L46 <<--\n\rTEST\n\rCompile time: ");
+	usart2_WriteS(__TIME__);
 	/* USART 1 */
-		usart1_init();
+//		usart1_init();
 	
 	/*USART 3 */
-		usart3_init();
+	//	usart3_init();
 	
 		/*UART 4 */
-		usart_stat = uart4_init();
+	//	usart_stat = uart4_init();
 	
 		/*UART 5 */
 	//	usart_stat = uart5_init();
 	
-	/* TIM2 */	
+	/* TIM2 */
+	procent++;
 	tim2_stat =	tim2_init();
-		
-		usart2_WriteS("\n\r--> NUCLEO L4 <--\n\r TESTUJEMY: MKelectronic \n\r"); 
-		usart2_WriteS(__TIME__);
+
+	/* I2C1 INIT */
+		i2c_init(I2C1);
 }
 
 //===================================================================================================================================================
@@ -83,7 +87,12 @@ const t_halLib halLib /*__attribute__((at(0x8010100)))*/ ={
 		
 		//TIM2
 		 tim2_init,									 //uint8_t  (*tim2_init)			(void);
-		 
+		
+		//I2C
+		i2c_init,										//uint8_t	  (*i2c_init)									(I2C_TypeDef* I2Cx);
+		i2c1_is_device_ready,				//uint8_t 	(*i2c1_is_device_ready) 		(uint16_t adr);
+		read_mem,										//void			(*read_mem)									(uint16_t dev_adr,uint16_t mem_adr,uint16_t mem_size, uint8_t *data, uint16_t size);
+		write_mem,									//void			(*write_mem)								(uint16_t dev_adr,uint16_t mem_adr,uint16_t mem_size, uint8_t *data, uint16_t size);
 };
 t_halLib *HAL=(t_halLib *)&halLib;
 

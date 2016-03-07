@@ -20,38 +20,44 @@
 #include "uart.h"
 #include "timer.h"
 #include "itoa.h"
+#include "i2c.h"
+#include "mk_term.h"
 
 typedef struct{
    //system	
-   void     (*Init)(void);
+   void     (*Init)											(void);
 	 //led
-	 void			(*led_port_init)(void);
-	 void			(*ledOn)				(void);
-	 void			(*ledOff)				(void);
-	 void 		(*ledToggle)		(void);
+	 void			(*led_port_init)						(void);
+	 void			(*ledOn)										(void);
+	 void			(*ledOff)										(void);
+	 void 		(*ledToggle)								(void);
 	 //usart1
-	 uint8_t	(*usart1_init)		(void);
-	 void			(*usart1_Write)		(char data);
-	 void			(*usart1_WriteS)	(char *s);
+	 uint8_t	(*usart1_init)							(void);
+	 void			(*usart1_Write)							(char data);
+	 void			(*usart1_WriteS)						(char *s);
 	 //usart2
-	 uint8_t	(*usart2_init)		(void);
-	 void			(*usart2_Write)		(char data);
-	 void			(*usart2_WriteS)	(char *s);
+	 uint8_t	(*usart2_init)							(void);
+	 void			(*usart2_Write)							(char data);
+	 void			(*usart2_WriteS)						(char *s);
 	 //usart3
-	 uint8_t	(*usart3_init)		(void);
-	 void			(*usart3_Write)		(char data);
-	 void			(*usart3_WriteS)	(char *s);	 
+	 uint8_t	(*usart3_init)							(void);
+	 void			(*usart3_Write)							(char data);
+	 void			(*usart3_WriteS)						(char *s);	 
 	//uart4
-	 uint8_t 	(*uart4_init)		(void);
-	 void			(*uart4_Write)	(char data);
-	 void 		(*uart4_WriteS)	(char *s);
+	 uint8_t 	(*uart4_init)								(void);
+	 void			(*uart4_Write)							(char data);
+	 void 		(*uart4_WriteS)							(char *s);
 	//uart5
-	 uint8_t 	(*uart5_init)		(void);
-	 void			(*uart5_Write)	(char data);
-	 void 		(*uart5_WriteS)	(char *s);
+	 uint8_t 	(*uart5_init)								(void);
+	 void			(*uart5_Write)							(char data);
+	 void 		(*uart5_WriteS)							(char *s);
 	 //TIM2
-		uint8_t  (*tim2_init)			(void);
-		
+	 uint8_t  (*tim2_init)								(void);
+	 //I2C
+	 uint8_t	(*i2c_init)									(I2C_TypeDef* I2Cx);
+	 uint8_t 	(*i2c1_is_device_ready) 		(uint16_t adr);
+	 void			(*read_mem)									(uint16_t dev_adr,uint16_t mem_adr,uint16_t mem_size, uint8_t *data, uint16_t size);
+	 void			(*write_mem)								(uint16_t dev_adr,uint16_t mem_adr,uint16_t mem_size, uint8_t *data, uint16_t size);
 	
 }t_halLib;
 extern t_halLib *HAL;

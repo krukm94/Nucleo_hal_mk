@@ -82,4 +82,6 @@
 .\objects\main.o: source\uart.h
 .\objects\main.o: source\timer.h
 .\objects\main.o: source\hal.h
-.\objects\main.o: source\mpu-6050.h
+.\objects\main.o: source\i2c.h
+.\objects\main.o: source\mk_term.h
+.\objects\main.o: source\kompas.h

@@ -29,6 +29,7 @@ void led_port_init(void)
 	
 	// set RCC for GPIOI
 	__HAL_RCC_GPIOA_CLK_ENABLE();				
+	
 	// set GPIO pin 
 	GPIO.Pin = GPIO_PIN_5;
 	// set GPIO mode

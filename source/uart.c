@@ -200,7 +200,7 @@ void usart1_odczyt(uint8_t rx){
 					cnt_usart1 = -1;
 					last_line_usart1 = 0;
 				
-					//uart4_WriteS(buf_usart1);
+					uart4_WriteS(buf_usart1);
 					// niezbedne wyczyszczenie smieci z buforu
 						for(i=0;i<1000;i++){
 							buf_usart1[i] = 0;
@@ -411,12 +411,10 @@ uint8_t usart3_init(void)
  
 /* Enable GPIO clock */
 	__HAL_RCC_GPIOC_CLK_ENABLE();
-
  
 // Enable clock for USART1 peripheral
 	__HAL_RCC_USART3_CLK_ENABLE();
 	
-
 	
 /* Configure USART Tx as alternate function */
 		GPIO_InitStruct.Pin = GPIO_PIN_4;
@@ -515,7 +513,7 @@ void USART3_IRQHandler(void)
   ===========================================================================================================================================================================
 */ 
 void usart3_odczyt(uint8_t rx){
-	
+
 		buf_usart3[cnt_usart3] = rx;
 
 	
@@ -538,12 +536,14 @@ void usart3_odczyt(uint8_t rx){
 					// - 1 poniewaz na koncu funkcji jest cnt++;
 					cnt_usart3 = -1;
 					last_line_usart3 = 0;
-	
-				//	usart2_WriteS(buf_usart3);
+					
+						usart2_WriteS(buf_usart3);
 					// niezbedne wyczyszczenie smieci z buforu
+					
 						for(i=0;i<1000;i++){
 							buf_usart3[i] = 0;
 						}
+
 				}
 		}
 		cnt_usart3++;

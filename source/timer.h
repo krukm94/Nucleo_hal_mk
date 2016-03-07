@@ -17,3 +17,4 @@
 /* ---------------------> FUNCTIONS */
 
 uint8_t tim2_init(void);
+void obciazenie_uC(void);

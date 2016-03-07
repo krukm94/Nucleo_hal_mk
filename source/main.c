@@ -16,43 +16,62 @@
 
 /* ------------------------> private includes */
 #include "hal.h"
-#include "mpu-6050.h"
+#include "kompas.h"
 /* ------------------------> global variables */
-volatile uint8_t i2c1_init_stat;
-volatile uint8_t device_ready;
-volatile  uint8_t *buf;
+
+
+
+/* zmienna do wyliczania obciazenia uC */
+extern volatile float procent;
 
 int main(void){
+	uint16_t ch_X,ch_Y,ch_Z;
+	char ch_X_buf[16];
+	char ch_Y_buf[16];
+	char ch_Z_buf[16];
 
- 
-	char AX[16];
-	char init_stat_buf[16];
-	char device_ready_buf[16];
-	
 	/*wywolanie hala stm */
 	HAL_Init();
 	/*wywolanie inicjalizacji hala */
 	HAL ->Init();
-
-		i2c1_init_stat = i2c1_init();
-		
-		device_ready = i2c1_test();
-	
-		
-		itoa(i2c1_init_stat,init_stat_buf,10);
-		itoa(device_ready,device_ready_buf,10);
-	
-		HAL -> usart2_WriteS("\n\r Init: ");
-		HAL -> usart2_WriteS(init_stat_buf);
-		HAL -> usart2_WriteS("\n\r Test: ");
-		HAL -> usart2_WriteS(device_ready_buf);
-	
-
+		//ustawienie trybu ciaglego
+		const_mode();
 			/* -------------------------------------> main loop */
 			while(1){
-				*buf = mpu_6050_read_AX();
-					HAL -> usart2_WriteS(buf);
+				HAL_Delay(1000);
+				
+				ch_X = chanel_X();
+				ch_Y = chanel_Y();
+				ch_Z = chanel_Z();				
+				
+				itoa(ch_X,ch_X_buf,10);
+				itoa(ch_Y,ch_Y_buf,10);
+				itoa(ch_Z,ch_Z_buf,10);
+				
+				tr_cls(0);
+				tr_locate(0,0);
+				
+				HAL -> usart2_WriteS("\n\r\n\r --> X: ");
+				HAL -> usart2_WriteS(ch_X_buf);
+				
+				HAL -> usart2_WriteS(" [deg] \n\r --> Y: ");
+				HAL -> usart2_WriteS(ch_Y_buf);
+				
+				HAL -> usart2_WriteS(" [deg] \n\r --> Z: ");
+				HAL -> usart2_WriteS(ch_Z_buf);
+				HAL -> usart2_WriteS(" [deg]");
+				
+				/* zmienna do wyliczania obciazenia uC */
+				procent++;
 
 			}
 }
+/*
+=================================================================================================================================
+																													
 
+																													END OF FILE
+																													
+
+=================================================================================================================================
+*/
