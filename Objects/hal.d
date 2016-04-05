@@ -84,3 +84,4 @@
 .\objects\hal.o: source\hal.h
 .\objects\hal.o: source\i2c.h
 .\objects\hal.o: source\mk_term.h
+.\objects\hal.o: source\discovery_boards.h

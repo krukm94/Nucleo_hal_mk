@@ -22,6 +22,7 @@
 #include "itoa.h"
 #include "i2c.h"
 #include "mk_term.h"
+#include "discovery_boards.h"
 
 typedef struct{
    //system	
@@ -54,10 +55,16 @@ typedef struct{
 	 //TIM2
 	 uint8_t  (*tim2_init)								(void);
 	 //I2C
-	 uint8_t	(*i2c_init)									(I2C_TypeDef* I2Cx);
-	 uint8_t 	(*i2c1_is_device_ready) 		(uint16_t adr);
-	 void			(*read_mem)									(uint16_t dev_adr,uint16_t mem_adr,uint16_t mem_size, uint8_t *data, uint16_t size);
-	 void			(*write_mem)								(uint16_t dev_adr,uint16_t mem_adr,uint16_t mem_size, uint8_t *data, uint16_t size);
+	 uint8_t	(*i2c_init)									(I2C_TypeDef* I2Cx ,
+																						uint32_t TIMING, 
+																						GPIO_TypeDef  *GPIO_SDAx, 
+																						uint32_t GPIO_SDA_PIN, 
+																						GPIO_TypeDef  *GPIO_SCLx, 
+																						uint32_t GPIO_SCL_PIN, 
+																						uint8_t GPIO_AF);
+	 uint8_t 	(*i2c1_is_device_ready) 		(uint16_t dev_read_addres);
+	 uint8_t			(*read_mem)									(uint16_t dev_adr,uint16_t mem_adr,uint16_t mem_size, uint8_t *data, uint16_t size);
+	 uint8_t			(*write_mem)								(uint16_t dev_adr,uint16_t mem_adr,uint16_t mem_size, uint8_t *data, uint16_t size);
 	
 }t_halLib;
 extern t_halLib *HAL;

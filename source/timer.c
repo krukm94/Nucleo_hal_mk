@@ -32,12 +32,30 @@ uint32_t odniesienie = 7968310;
 /* ---------------------> Deklaracja uchwytów */
 	TIM_HandleTypeDef			TIM2_HandleStruct;
 /*
+ ===========================================================================================================================================================================
+																																			
+																						ERROR FUNCTION(That function is executed when error occurs)
+
+  ===========================================================================================================================================================================
+*/ 
+void error_function(void){
+			
+	usart2_WriteS("\n\r\n\r\n\r               ----> ERROR! <----\n\r\n\r\n\r");
+		while(1){
+			ledToggle();
+			
+			HAL_Delay(100);
+			}
+}
+
+
+
 // ===========================================================================================================================================================================
 
 //																																						INICJALIZACJA TIM 2
 
 //  ===========================================================================================================================================================================
-*/
+
 uint8_t tim2_init(void){
 		
 		/* zmienna zwracana przez funkcje */
@@ -73,14 +91,14 @@ uint8_t tim2_init(void){
 
 //  ===========================================================================================================================================================================
 */
-
+// Przerwania z timera ustawione na co 1 s
 void TIM2_IRQHandler(void)
 {		
 		if(__HAL_TIM_GET_FLAG(&TIM2_HandleStruct, TIM_SR_UIF)){
 				__HAL_TIM_CLEAR_FLAG(&TIM2_HandleStruct, TIM_SR_UIF);
 
+			
 				ledToggle();
-				
 			  /* procedura przekazywania zmiennej do obliczania obciazenia uC */
 				procent_priv = procent;
 				procent = 0;

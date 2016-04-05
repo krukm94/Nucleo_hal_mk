@@ -8,6 +8,7 @@
 ".\objects\mk_term.o"
 ".\objects\i2c.o"
 ".\objects\kompas.o"
+".\objects\lsm9ds0.o"
 ".\objects\system_stm32l4xx.o"
 ".\objects\startup_stm32l476xx.o"
 ".\objects\stm32l4xx_hal.o"

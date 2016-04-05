@@ -367,7 +367,7 @@
             <v6LangP>0</v6LangP>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>STM32L476xx,USE_HAL_DRIVER,USE_STM32L4XX_NUCLEO</Define>
+              <Define>STM32L476xx,USE_HAL_DRIVER,USE_STM32L4XX_NUCLEO,STM32L4_NUCLEO</Define>
               <Undefine></Undefine>
               <IncludePath>.\lib\BSP;.\lib\CMSIS;.\lib;.\lib\STM32HALL4\Inc\Legacy;.\lib\STM32HALL4\Inc;.\source</IncludePath>
             </VariousControls>
@@ -456,6 +456,11 @@
               <FileName>kompas.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\source\kompas.c</FilePath>
+            </File>
+            <File>
+              <FileName>lsm9ds0.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\source\lsm9ds0.c</FilePath>
             </File>
           </Files>
         </Group>

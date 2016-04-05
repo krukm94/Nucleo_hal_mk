@@ -13,6 +13,7 @@
 // global variables
 volatile uint8_t usart_stat;
 volatile uint8_t tim2_stat;
+volatile uint8_t i2c1_status;
 extern volatile uint32_t procent;
 
 //===================================================================================================================================================
@@ -27,8 +28,14 @@ void halLib_Init(void){
 	/* Inicjalizacja uartu2 */
 		usart2_init();
 	
+	//Czyszczenie terminala  ( do funkcji tr_cls i tr_locate wymagana biblioteka mk_term)
+	tr_cls(0);
+	tr_locate(0,0);
+	//Powitanie
 	usart2_WriteS("-->> NUCLEO L46 <<--\n\rTEST\n\rCompile time: ");
 	usart2_WriteS(__TIME__);
+	
+	
 	/* USART 1 */
 //		usart1_init();
 	
@@ -46,7 +53,7 @@ void halLib_Init(void){
 	tim2_stat =	tim2_init();
 
 	/* I2C1 INIT */
-		i2c_init(I2C1);
+i2c1_status =	i2c_init(I2C1, 0x00702991 , I2C1_PORT_SDA , I2C1_PIN_SDA , I2C1_PORT_SCL, I2C1_PIN_SCL , I2C1_GPIO_AF);
 }
 
 //===================================================================================================================================================

@@ -1,4 +1,5 @@
 .\objects\main.o: source\main.c
+.\objects\main.o: source\init.h
 .\objects\main.o: .\lib\CMSIS\stm32l4xx.h
 .\objects\main.o: .\lib\CMSIS\stm32l476xx.h
 .\objects\main.o: .\lib\CMSIS\core_cm4.h
@@ -84,4 +85,7 @@
 .\objects\main.o: source\hal.h
 .\objects\main.o: source\i2c.h
 .\objects\main.o: source\mk_term.h
+.\objects\main.o: source\discovery_boards.h
 .\objects\main.o: source\kompas.h
+.\objects\main.o: source\lsm9ds0.h
+.\objects\main.o: source\timer.h

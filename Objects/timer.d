@@ -85,3 +85,4 @@
 .\objects\timer.o: source\hal.h
 .\objects\timer.o: source\i2c.h
 .\objects\timer.o: source\mk_term.h
+.\objects\timer.o: source\discovery_boards.h
