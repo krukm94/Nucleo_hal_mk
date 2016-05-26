@@ -26,12 +26,16 @@ void lsm_config(void){
 	uint8_t data[1];
 	uint8_t data1[1];
 	uint8_t data2[1];
+	uint8_t data3[1];
+	data3[0] = 0x20;
 	data[0] = NORMAL_MODE;
 	data1[0] = 0x17;
-	data2[0] = 0x24;
-		if((write_mem( WRITE_ADR_LSM , CTRL_REG1_G_ADR , MEMORY_SIZE_LSM , data , 1 )) != 0)	error_function();
-	  if((write_mem( 0x3A , CTRL_REG1_G_ADR , MEMORY_SIZE_LSM , data1 , 1 )) != 0)	error_function();
-		if((write_mem( 0x3A , CTRL_REG1_G_ADR , MEMORY_SIZE_LSM , data1 , 1 )) != 0)	error_function();
+	data2[0] = 0x00;
+		if((write_mem( WRITE_ADR_LSM_GYRO , CTRL_REG1_G_ADR , MEMORY_SIZE_LSM , data , 1 )) != 0)	error_function();
+		if((write_mem( WRITE_ADR_LSM_ACCEL_MAG , 0x21 , MEMORY_SIZE_LSM , data3 , 1 )) != 0)	error_function();
+	  if((write_mem( WRITE_ADR_LSM_ACCEL_MAG , CTRL_REG1_G_ADR , MEMORY_SIZE_LSM , data1 , 1 )) != 0)	error_function();
+		if((write_mem( WRITE_ADR_LSM_ACCEL_MAG , CTRL_REG7_XM , MEMORY_SIZE_LSM , data2 , 1 )) != 0)	error_function();
+	
 }
 
 /*
@@ -49,7 +53,7 @@ uint8_t 	gyro_x_buf[2];
 //	
 uint16_t 	gyro_x;
 	
-	read_stat = read_mem( READ_ADR_LSM , GYRO_X_ADR , MEMORY_SIZE_LSM , gyro_x_buf , 2);
+	read_stat = read_mem( READ_ADR_LSM_GYRO , GYRO_X_ADR , MEMORY_SIZE_LSM , gyro_x_buf , 2);
 	
 	gyro_x = (gyro_x_buf[0] << 8);
 	gyro_x = gyro_x_buf[1];
@@ -71,7 +75,7 @@ uint8_t 	gyro_z_buf[2];
 //	
 uint16_t 	gyro_z;
 	
-	read_mem( READ_ADR_LSM , GYRO_Z_ADR , MEMORY_SIZE_LSM , gyro_z_buf , 2 );
+	read_mem( READ_ADR_LSM_GYRO , GYRO_Z_ADR , MEMORY_SIZE_LSM , gyro_z_buf , 2 );
 	
 	gyro_z = (gyro_z_buf[0] << 8);
 	gyro_z = gyro_z_buf[1];
@@ -93,7 +97,7 @@ uint8_t 	gyro_y_buf[2];
 //	
 uint16_t 	gyro_y;
 	
-	read_mem( READ_ADR_LSM , GYRO_Y_ADR , MEMORY_SIZE_LSM , gyro_y_buf , 2 );
+	read_mem( READ_ADR_LSM_GYRO , GYRO_Y_ADR , MEMORY_SIZE_LSM , gyro_y_buf , 2 );
 	
 	gyro_y = (gyro_y_buf[0] << 8);
 	gyro_y = gyro_y_buf[1];
@@ -116,7 +120,7 @@ uint8_t 	acc_x_buf[2];
 //	
 uint16_t 	acc_x;
 	
-	read_mem( 0x3B , ACCELEROMETER_X_ADR , MEMORY_SIZE_LSM , acc_x_buf , 2 );
+	read_mem( READ_ADR_LSM_ACCEL_MAG , ACCELEROMETER_X_ADR , MEMORY_SIZE_LSM , acc_x_buf , 2 );
 	
 	acc_x = (acc_x_buf[0] << 8);
 	acc_x = acc_x_buf[1];
@@ -137,7 +141,7 @@ uint8_t 	acc_z_buf[2];
 //	
 uint16_t 	acc_z;
 	
-	read_mem( 0x3B , ACCELEROMETER_Z_ADR , MEMORY_SIZE_LSM , acc_z_buf , 2 );
+	read_mem( READ_ADR_LSM_ACCEL_MAG , ACCELEROMETER_Z_ADR , MEMORY_SIZE_LSM , acc_z_buf , 2 );
 	
 	acc_z = (acc_z_buf[0] << 8);
 	acc_z = acc_z_buf[1];
@@ -158,7 +162,7 @@ uint8_t 	acc_y_buf[2];
 //	
 uint16_t 	acc_y;
 	
-	read_mem( 0x3B , ACCELEROMETER_Y_ADR , MEMORY_SIZE_LSM , acc_y_buf , 2 );
+	read_mem( READ_ADR_LSM_ACCEL_MAG , ACCELEROMETER_Y_ADR , MEMORY_SIZE_LSM , acc_y_buf , 2 );
 	
 	acc_y = (acc_y_buf[0] << 8);
 	acc_y = acc_y_buf[1];
@@ -180,7 +184,7 @@ uint8_t 	mag_x_buf[2];
 //	
 uint16_t 	mag_x;
 	
-	read_mem( 0x3B , MAGNETOMETER_X_ADR , MEMORY_SIZE_LSM , mag_x_buf , 2 );
+	read_mem( READ_ADR_LSM_ACCEL_MAG , MAGNETOMETER_X_ADR , MEMORY_SIZE_LSM , mag_x_buf , 2 );
 	
 	mag_x = (mag_x_buf[0] << 8);
 	mag_x = mag_x_buf[1];
@@ -201,7 +205,7 @@ uint8_t 	mag_z_buf[2];
 //	
 uint16_t 	mag_z;
 	
-	read_mem( 0x3B , MAGNETOMETER_Z_ADR , MEMORY_SIZE_LSM , mag_z_buf , 2 );
+	read_mem( READ_ADR_LSM_ACCEL_MAG , MAGNETOMETER_Z_ADR , MEMORY_SIZE_LSM , mag_z_buf , 2 );
 	
 	mag_z = (mag_z_buf[0] << 8);
 	mag_z = mag_z_buf[1];
@@ -223,7 +227,7 @@ uint8_t 	mag_y_buf[2];
 //	
 uint16_t 	mag_y;
 	
-	read_mem( 0x3B , MAGNETOMETER_Y_ADR , MEMORY_SIZE_LSM , mag_y_buf , 2 );
+	read_mem( READ_ADR_LSM_ACCEL_MAG , MAGNETOMETER_Y_ADR , MEMORY_SIZE_LSM , mag_y_buf , 2 );
 	
 	mag_y = (mag_y_buf[0] << 8);
 	mag_y = mag_y_buf[1];

@@ -20,6 +20,7 @@
 #include "uart.h"
 #include "timer.h"
 #include "itoa.h"
+#include "gpio_mk.h"
 #include "i2c.h"
 #include "mk_term.h"
 #include "discovery_boards.h"

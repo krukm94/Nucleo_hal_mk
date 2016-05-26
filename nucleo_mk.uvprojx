@@ -423,11 +423,6 @@
               <FilePath>.\source\led.c</FilePath>
             </File>
             <File>
-              <FileName>hal.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\source\hal.c</FilePath>
-            </File>
-            <File>
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\source\uart.c</FilePath>
@@ -443,24 +438,29 @@
               <FilePath>.\source\timer.c</FilePath>
             </File>
             <File>
-              <FileName>mk_term.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\source\mk_term.c</FilePath>
-            </File>
-            <File>
               <FileName>i2c.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\source\i2c.c</FilePath>
             </File>
             <File>
-              <FileName>kompas.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\source\kompas.c</FilePath>
-            </File>
-            <File>
               <FileName>lsm9ds0.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\source\lsm9ds0.c</FilePath>
+            </File>
+            <File>
+              <FileName>gpio_mk.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\source\gpio_mk.c</FilePath>
+            </File>
+            <File>
+              <FileName>init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\source\init.c</FilePath>
+            </File>
+            <File>
+              <FileName>nRF905.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\source\nRF905.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -1,7 +1,7 @@
 /*
  ===========================================================================================================================================================================
 																																			HEADER FILE
-																																			TIM DRIVER
+																																			GPIO DRIVER
 																																			NUCLEO L476RG
 																																			MICHAL KRUK
 
@@ -12,35 +12,20 @@
 
 #include "stm32l4xx.h"
 #include "stm32l4xx_hal.h"
-#include "init.h"
+#include "hal.h"
 
 /* ---------------------> MACROS */ 
-#define TIM_INIT_ERROR 0x01
-#define TIM_INIT_OK		 0x00
 
-#define timeLSB 			 12.5 				// 0,8 ms / 64000 = 12,5  [ns/LSB]
 /* ---------------------> FUNCTIONS */
-
-/* ---------------------> TIMER 2 FUNCTIONS */
-uint8_t tim2_init(void);
-void obciazenie_uC(void);
-
-/* ---------------------> TIMER 3 FUNCTIONS */
-uint8_t tim3_init(void);
-
-/* ---------------------> TIMER 5 FUNCTIONS */
-// That timer is for time measurment
-
-uint8_t tim5_init(void);
-void start_tim_meas(void);
-double get_tim_meas(uint8_t display_result);
-
-// ERROR HANDLER FUNCTION
-void error_function(void);
+void gpio_init(GPIO_TypeDef  *GPIOx , uint32_t Pinx , uint32_t Mode , uint32_t Pull );
+void gpio_set(GPIO_TypeDef  *GPIOx , uint32_t PINx );
+void gpio_reset(GPIO_TypeDef  *GPIOx , uint32_t PINx );
+void gpio_toggle(GPIO_TypeDef  *GPIOx , uint32_t PINx );
+uint8_t gpio_read(GPIO_TypeDef *GPIOx , uint32_t PINx);
 
 /*
  ===========================================================================================================================================================================
 																																			END OF FILE
   ===========================================================================================================================================================================
 */ 
-
+//

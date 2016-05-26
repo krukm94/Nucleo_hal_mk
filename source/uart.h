@@ -14,9 +14,7 @@
 
 /* -------------------------->	includes */
 #include <string.h>
-#include "led.h"
-#include "itoa.h"
-#include "mk_term.h"
+#include "init.h"
 
 #include "stm32l4xx.h"
 #include "stm32l4xx_hal.h"
@@ -49,7 +47,7 @@
 
 
 /* BAUDRATES */
-#define BAUDRATE_USART2   115200
+#define BAUDRATE_USART2   2000000
 #define BAUDRATE_USART1		9600
 #define BAUDRATE_USART3		9600
 

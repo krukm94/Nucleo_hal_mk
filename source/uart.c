@@ -200,7 +200,7 @@ void usart1_odczyt(uint8_t rx){
 					cnt_usart1 = -1;
 					last_line_usart1 = 0;
 				
-					uart4_WriteS(buf_usart1);
+					//uart4_WriteS(buf_usart1);
 					// niezbedne wyczyszczenie smieci z buforu
 						for(i=0;i<1000;i++){
 							buf_usart1[i] = 0;
@@ -225,7 +225,7 @@ void usart1_odczyt(uint8_t rx){
 /*
  ===========================================================================================================================================================================
 
-																																						FUNKCE DLA USART 2
+																																							FUNKCE DLA USART 2
 
   ===========================================================================================================================================================================
 */ 
@@ -233,7 +233,7 @@ void usart1_odczyt(uint8_t rx){
 /*
  ===========================================================================================================================================================================
 
-																																						INICJALIZACJA USART 2 
+																																							INICJALIZACJA USART 2 
 
   ===========================================================================================================================================================================
 */ 
@@ -270,10 +270,10 @@ uint8_t usart2_init(void)
 		GPIO_InitStruct.Speed = GPIO_SPEED_FAST;
 		GPIO_InitStruct.Alternate = GPIO_AF7_USART2;
 		HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-		//Priorytet przerwania
 		
-		NVIC_SetPriority(USART2_IRQn, 1);
-		NVIC_EnableIRQ(USART2_IRQn);
+		//Priorytet przerwania
+	//	HAL_NVIC_SetPriority(USART2_IRQn , 0 , 1);
+	//	HAL_NVIC_EnableIRQ(USART2_IRQn);
 		
 //Handle
 		USART2_HandleStruct.Instance = USART2;
@@ -290,7 +290,7 @@ uint8_t usart2_init(void)
 
 		//Przerwania od RX ON
 			#ifdef USART2_IT_RX_ON
-			USART2 -> CR1 |= USART_CR1_RXNEIE;
+		//	USART2 -> CR1 |= USART_CR1_RXNEIE;
 			#endif
 			
 		return usart_status;
@@ -537,7 +537,7 @@ void usart3_odczyt(uint8_t rx){
 					cnt_usart3 = -1;
 					last_line_usart3 = 0;
 					
-						usart2_WriteS(buf_usart3);
+					//	usart2_WriteS(buf_usart3);
 					// niezbedne wyczyszczenie smieci z buforu
 					
 						for(i=0;i<1000;i++){

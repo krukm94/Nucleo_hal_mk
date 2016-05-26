@@ -187,7 +187,7 @@ uint8_t read_mem(uint16_t dev_adr,uint16_t mem_adr,uint16_t mem_size, uint8_t *d
 		/* Czwarty parametr to rozmiar odczytywanego obszaru pamieci, przewaznie jest to 1 bajt
 			6 parametr to ilosc bitów które chcemy po kolei odczytac.
 		*/
-		return HAL_I2C_Mem_Read(&I2C_HandleStruct, dev_adr, mem_adr, mem_size,data, size,100);
+		return HAL_I2C_Mem_Read(&I2C_HandleStruct, dev_adr, mem_adr, mem_size, data, size,100);
 }
 /*
  ===========================================================================================================================================================================

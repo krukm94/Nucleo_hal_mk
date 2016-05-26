@@ -82,6 +82,7 @@
 .\objects\hal.o: source\uart.h
 .\objects\hal.o: source\timer.h
 .\objects\hal.o: source\hal.h
+.\objects\hal.o: source\gpio_mk.h
 .\objects\hal.o: source\i2c.h
 .\objects\hal.o: source\mk_term.h
 .\objects\hal.o: source\discovery_boards.h
