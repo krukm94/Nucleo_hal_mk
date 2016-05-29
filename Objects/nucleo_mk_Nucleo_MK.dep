@@ -1,5 +1,5 @@
 Dependencies for Project 'nucleo_mk', Target 'Nucleo_MK': (DO NOT MODIFY !)
-F (.\source\main.c)(0x57475193)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\BSP -I.\lib\CMSIS -I.\lib -I.\lib\STM32HALL4\Inc\Legacy -I.\lib\STM32HALL4\Inc -I.\source-I C:\Users\£ysol\Desktop\Organizer\Studia\stm32\NUCLEO\Workspace\Nucleo_hal_mk\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32L476xx -DSTM32L476xx -DUSE_HAL_DRIVER -DUSE_STM32L4XX_NUCLEO -DSTM32L4_NUCLEO-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\source\main.c)(0x574975C3)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\BSP -I.\lib\CMSIS -I.\lib -I.\lib\STM32HALL4\Inc\Legacy -I.\lib\STM32HALL4\Inc -I.\source-I C:\Users\£ysol\Desktop\Organizer\Studia\stm32\NUCLEO\Workspace\Nucleo_hal_mk\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32L476xx -DSTM32L476xx -DUSE_HAL_DRIVER -DUSE_STM32L4XX_NUCLEO -DSTM32L4_NUCLEO-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (source\init.h)(0x574570B0)
 I (.\lib\CMSIS\stm32l4xx.h)(0x56549DC9)
 I (.\lib\CMSIS\stm32l476xx.h)(0x56549DCA)
@@ -85,7 +85,7 @@ I (source\hal.h)(0x5739DBAB)
 I (source\i2c.h)(0x57004D6B)
 I (source\mk_term.h)(0x5681C61D)
 I (source\discovery_boards.h)(0x5703BA45)
-I (source\nRF905.h)(0x57476143)
+I (source\nRF905.h)(0x574976DC)
 F (.\source\led.c)(0x569FE892)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\BSP -I.\lib\CMSIS -I.\lib -I.\lib\STM32HALL4\Inc\Legacy -I.\lib\STM32HALL4\Inc -I.\source-I C:\Users\£ysol\Desktop\Organizer\Studia\stm32\NUCLEO\Workspace\Nucleo_hal_mk\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32L476xx -DSTM32L476xx -DUSE_HAL_DRIVER -DUSE_STM32L4XX_NUCLEO -DSTM32L4_NUCLEO-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
 I (source\led.h)(0x5678C81C)
 I (.\lib\CMSIS\stm32l4xx.h)(0x56549DC9)
@@ -247,11 +247,11 @@ I (source\hal.h)(0x5739DBAB)
 I (source\i2c.h)(0x57004D6B)
 I (source\mk_term.h)(0x5681C61D)
 I (source\discovery_boards.h)(0x5703BA45)
-I (source\nRF905.h)(0x57476143)
+I (source\nRF905.h)(0x574976DC)
 F (.\source\itoa.c)(0x566B23F5)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\BSP -I.\lib\CMSIS -I.\lib -I.\lib\STM32HALL4\Inc\Legacy -I.\lib\STM32HALL4\Inc -I.\source-I C:\Users\£ysol\Desktop\Organizer\Studia\stm32\NUCLEO\Workspace\Nucleo_hal_mk\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32L476xx -DSTM32L476xx -DUSE_HAL_DRIVER -DUSE_STM32L4XX_NUCLEO -DSTM32L4_NUCLEO-o .\objects\itoa.o --omf_browse .\objects\itoa.crf --depend .\objects\itoa.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C2A828)
 I (source\itoa.h)(0x566B23FE)
-F (.\source\timer.c)(0x573B5742)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\BSP -I.\lib\CMSIS -I.\lib -I.\lib\STM32HALL4\Inc\Legacy -I.\lib\STM32HALL4\Inc -I.\source-I C:\Users\£ysol\Desktop\Organizer\Studia\stm32\NUCLEO\Workspace\Nucleo_hal_mk\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32L476xx -DSTM32L476xx -DUSE_HAL_DRIVER -DUSE_STM32L4XX_NUCLEO -DSTM32L4_NUCLEO-o .\objects\timer.o --omf_browse .\objects\timer.crf --depend .\objects\timer.d)
+F (.\source\timer.c)(0x57497721)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\BSP -I.\lib\CMSIS -I.\lib -I.\lib\STM32HALL4\Inc\Legacy -I.\lib\STM32HALL4\Inc -I.\source-I C:\Users\£ysol\Desktop\Organizer\Studia\stm32\NUCLEO\Workspace\Nucleo_hal_mk\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32L476xx -DSTM32L476xx -DUSE_HAL_DRIVER -DUSE_STM32L4XX_NUCLEO -DSTM32L4_NUCLEO-o .\objects\timer.o --omf_browse .\objects\timer.crf --depend .\objects\timer.d)
 I (source\timer.h)(0x573B5743)
 I (.\lib\CMSIS\stm32l4xx.h)(0x56549DC9)
 I (.\lib\CMSIS\stm32l476xx.h)(0x56549DCA)
@@ -337,7 +337,7 @@ I (source\hal.h)(0x5739DBAB)
 I (source\i2c.h)(0x57004D6B)
 I (source\mk_term.h)(0x5681C61D)
 I (source\discovery_boards.h)(0x5703BA45)
-I (source\nRF905.h)(0x57476143)
+I (source\nRF905.h)(0x574976DC)
 F (.\source\i2c.c)(0x5703D8EF)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\BSP -I.\lib\CMSIS -I.\lib -I.\lib\STM32HALL4\Inc\Legacy -I.\lib\STM32HALL4\Inc -I.\source-I C:\Users\£ysol\Desktop\Organizer\Studia\stm32\NUCLEO\Workspace\Nucleo_hal_mk\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32L476xx -DSTM32L476xx -DUSE_HAL_DRIVER -DUSE_STM32L4XX_NUCLEO -DSTM32L4_NUCLEO-o .\objects\i2c.o --omf_browse .\objects\i2c.crf --depend .\objects\i2c.d)
 I (source\i2c.h)(0x57004D6B)
 I (.\lib\CMSIS\stm32l4xx.h)(0x56549DC9)
@@ -499,7 +499,7 @@ I (source\hal.h)(0x5739DBAB)
 I (source\i2c.h)(0x57004D6B)
 I (source\mk_term.h)(0x5681C61D)
 I (source\discovery_boards.h)(0x5703BA45)
-I (source\nRF905.h)(0x57476143)
+I (source\nRF905.h)(0x574976DC)
 F (.\source\gpio_mk.c)(0x5746EDFE)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\BSP -I.\lib\CMSIS -I.\lib -I.\lib\STM32HALL4\Inc\Legacy -I.\lib\STM32HALL4\Inc -I.\source-I C:\Users\£ysol\Desktop\Organizer\Studia\stm32\NUCLEO\Workspace\Nucleo_hal_mk\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32L476xx -DSTM32L476xx -DUSE_HAL_DRIVER -DUSE_STM32L4XX_NUCLEO -DSTM32L4_NUCLEO-o .\objects\gpio_mk.o --omf_browse .\objects\gpio_mk.crf --depend .\objects\gpio_mk.d)
 I (source\gpio_mk.h)(0x5746EDFE)
 I (.\lib\CMSIS\stm32l4xx.h)(0x56549DC9)
@@ -585,9 +585,9 @@ I (source\timer.h)(0x573B5743)
 I (source\itoa.h)(0x566B23FE)
 I (source\i2c.h)(0x57004D6B)
 I (source\discovery_boards.h)(0x5703BA45)
-I (source\nRF905.h)(0x57476143)
+I (source\nRF905.h)(0x574976DC)
 I (source\mk_term.h)(0x5681C61D)
-F (.\source\init.c)(0x5745D0AE)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\BSP -I.\lib\CMSIS -I.\lib -I.\lib\STM32HALL4\Inc\Legacy -I.\lib\STM32HALL4\Inc -I.\source-I C:\Users\£ysol\Desktop\Organizer\Studia\stm32\NUCLEO\Workspace\Nucleo_hal_mk\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32L476xx -DSTM32L476xx -DUSE_HAL_DRIVER -DUSE_STM32L4XX_NUCLEO -DSTM32L4_NUCLEO-o .\objects\init.o --omf_browse .\objects\init.crf --depend .\objects\init.d)
+F (.\source\init.c)(0x574975F1)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\BSP -I.\lib\CMSIS -I.\lib -I.\lib\STM32HALL4\Inc\Legacy -I.\lib\STM32HALL4\Inc -I.\source-I C:\Users\£ysol\Desktop\Organizer\Studia\stm32\NUCLEO\Workspace\Nucleo_hal_mk\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32L476xx -DSTM32L476xx -DUSE_HAL_DRIVER -DUSE_STM32L4XX_NUCLEO -DSTM32L4_NUCLEO-o .\objects\init.o --omf_browse .\objects\init.crf --depend .\objects\init.d)
 I (source\init.h)(0x574570B0)
 I (.\lib\CMSIS\stm32l4xx.h)(0x56549DC9)
 I (.\lib\CMSIS\stm32l476xx.h)(0x56549DCA)
@@ -673,9 +673,9 @@ I (source\hal.h)(0x5739DBAB)
 I (source\i2c.h)(0x57004D6B)
 I (source\mk_term.h)(0x5681C61D)
 I (source\discovery_boards.h)(0x5703BA45)
-I (source\nRF905.h)(0x57476143)
-F (.\source\nRF905.c)(0x574766B1)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\BSP -I.\lib\CMSIS -I.\lib -I.\lib\STM32HALL4\Inc\Legacy -I.\lib\STM32HALL4\Inc -I.\source-I C:\Users\£ysol\Desktop\Organizer\Studia\stm32\NUCLEO\Workspace\Nucleo_hal_mk\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32L476xx -DSTM32L476xx -DUSE_HAL_DRIVER -DUSE_STM32L4XX_NUCLEO -DSTM32L4_NUCLEO-o .\objects\nrf905.o --omf_browse .\objects\nrf905.crf --depend .\objects\nrf905.d)
-I (source\nRF905.h)(0x57476143)
+I (source\nRF905.h)(0x574976DC)
+F (.\source\nRF905.c)(0x574975C3)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\BSP -I.\lib\CMSIS -I.\lib -I.\lib\STM32HALL4\Inc\Legacy -I.\lib\STM32HALL4\Inc -I.\source-I C:\Users\£ysol\Desktop\Organizer\Studia\stm32\NUCLEO\Workspace\Nucleo_hal_mk\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32L476xx -DSTM32L476xx -DUSE_HAL_DRIVER -DUSE_STM32L4XX_NUCLEO -DSTM32L4_NUCLEO-o .\objects\nrf905.o --omf_browse .\objects\nrf905.crf --depend .\objects\nrf905.d)
+I (source\nRF905.h)(0x574976DC)
 I (source\init.h)(0x574570B0)
 I (.\lib\CMSIS\stm32l4xx.h)(0x56549DC9)
 I (.\lib\CMSIS\stm32l476xx.h)(0x56549DCA)

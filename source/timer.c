@@ -91,6 +91,7 @@ void TIM2_IRQHandler(void)
 
 				
 				ledToggle();
+
 			  /* procedura przekazywania zmiennej do obliczania obciazenia uC */
 			//	procent_priv = procent;
 			//	procent = 0;
@@ -117,10 +118,11 @@ uint8_t tim3_init(void){
 		__HAL_RCC_TIM3_CLK_ENABLE();
 
 		/* wypelnianie struktury do inicjalizacji */
-		TIM2_HandleStruct.Instance = TIM3;
-		TIM2_HandleStruct.Init.CounterMode = TIM_COUNTERMODE_UP;
-		TIM2_HandleStruct.Init.Prescaler = 2000 - 1;
-		TIM2_HandleStruct.Init.Period = 400  - 1;		//Przerwania co 1 ms
+		TIM3_HandleStruct.Instance = TIM3;
+		TIM3_HandleStruct.Init.CounterMode = TIM_COUNTERMODE_UP;
+		TIM3_HandleStruct.Init.Prescaler = 20000 - 1;
+		TIM3_HandleStruct.Init.Period = 400  - 1;		//Przerwania co 100 ms
+		
 
 		// INIT OF TIM3
 		tim3_return =	HAL_TIM_Base_Init(&TIM3_HandleStruct);
@@ -129,10 +131,10 @@ uint8_t tim3_init(void){
 		__HAL_TIM_ENABLE(&TIM3_HandleStruct);
 		
 		/* Ustawienie Nvic */
-		HAL_NVIC_SetPriority(TIM3_IRQn, 0, 3);
+		HAL_NVIC_SetPriority(TIM3_IRQn, 0, 2);
 		HAL_NVIC_EnableIRQ(TIM3_IRQn);
 		
-		/*Wlaczenie przerwan od TIM2 */
+		/*Wlaczenie przerwan od TIM3 */
 		__HAL_TIM_ENABLE_IT(&TIM3_HandleStruct, TIM_IT_UPDATE);
 			
 		return tim3_return;
@@ -148,13 +150,21 @@ uint8_t tim3_init(void){
 
 void TIM3_IRQHandler(void){
 		
-		if(__HAL_TIM_GET_FLAG(&TIM3_HandleStruct , TIM_IT_UPDATE)){
-			 __HAL_TIM_CLEAR_FLAG(&TIM3_HandleStruct , TIM_IT_UPDATE);
-			
+			if(__HAL_TIM_GET_FLAG(&TIM3_HandleStruct, TIM_SR_UIF)){
+				__HAL_TIM_CLEAR_FLAG(&TIM3_HandleStruct, TIM_SR_UIF); 
 			//Insert code
-			
-		}
+			nRF_recive();
+			}
 }
+
+/*
+// ===========================================================================================================================================================================
+
+//																							TIM 3 CALLBACK
+
+//  ===========================================================================================================================================================================
+*/
+
 
 
 /*

@@ -13,6 +13,7 @@ volatile uint8_t usart_stat;
 volatile uint8_t tim2_stat;
 volatile uint8_t i2c1_status;
 volatile uint8_t tim5_stat;
+volatile uint8_t tim3_stat;
 
 //extern volatile uint32_t procent;
 
@@ -53,17 +54,21 @@ void init(void){
 	//procent++;
 	tim2_stat =	tim2_init();
 	
+	/* TIM3 */
+	tim3_stat = tim3_init();
+	
 	/* TIM5 INIT */
-	tim5_stat = tim5_init();
+	//tim5_stat = tim5_init();
 
 	/* I2C1 INIT */
 	//i2c1_status =	i2c_init(I2C1, 0x00702991 , I2C1_PORT_SDA , I2C1_PIN_SDA , I2C1_PORT_SCL, I2C1_PIN_SCL , I2C1_GPIO_AF);
 
 	/*GPIO INIT FOR TIME MESURE */
-	gpio_init(GPIOB , GPIO_PIN_8 , GPIO_MODE_OUTPUT_PP , GPIO_PULLUP);
+	//gpio_init(GPIOB , GPIO_PIN_8 , GPIO_MODE_OUTPUT_PP , GPIO_PULLUP);
 	
 	/* INIT SPI */
 	spi2_nRF_init();
+	spi3_nRF_init();
 	
 }
 

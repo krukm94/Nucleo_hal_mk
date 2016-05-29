@@ -12,7 +12,8 @@
 #include "init.h"
 
 /* ------------------------> global variables */
-
+extern volatile uint8_t data_ready_flag;
+uint8_t buf[8] = "WITAM";												//utworzenie zmiennej do transmisji
 /* zmienna do wyliczania obciazenia uC */
 //extern volatile float procent;
 //volatile uint8_t i2c1_response;
@@ -22,8 +23,11 @@
 extern SPI_HandleTypeDef	spi2_init_handle;		//Handle for spi init
 
 int main(void){
-
-		uint8_t buf[8] = "WITAM";
+	//	uint8_t buf[8] = "WITAM";
+		
+		uint8_t recive_buf[32];
+		int i;
+	
 //	uint16_t acc_X,acc_Y,acc_Z,mag_X,mag_Z,mag_Y,gyro_X,gyro_Z,gyro_Y;
 //	char i2c1_buf[16];
 //	char acc_X_buf[16];
@@ -55,14 +59,27 @@ int main(void){
 				//lsm_config();
 
 		
-		
+				usart2_WriteS("\n\r\n\r Odbieramy \n\r\n\r");
 		/* -------------------------------------> main loop */
 		while(1){
+				nRF_transmit(buf , 5);						//Transmisja
+
+				HAL_Delay(20);
+		
+				if(data_ready_flag){
+					data_ready_flag = 0;
+					spi3_recive(recive_buf , 32);
+					usart2_WriteS(recive_buf);
+				}
+				
+		
 			
-				nRF_transmit( buf , 1);
-				HAL_Delay(200);
-//				
-//				
+			
+			
+			
+			
+			
+			//				
 //				acc_X = accelerometer_x();
 //				acc_Y = accelerometer_y();
 //				acc_Z = accelerometer_z();			
